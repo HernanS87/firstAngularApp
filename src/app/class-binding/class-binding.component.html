@@ -1,0 +1,65 @@
+<!-- Primera opcion -->
+<div class="mb-4">
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-danger"
+    (click)="text_color = 'text-danger'"
+  >
+    text-danger
+  </button>
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-success mx-2"
+    (click)="text_color = 'text-success'"
+  >
+    text-success
+  </button>
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-primary"
+    (click)="text_color = 'text-primary'"
+  >
+    text-primary
+  </button>
+</div>
+
+<!-- Segunda opcion y mas recomendada para cuando varias clases dependan de un estado -->
+<span>Las clases de estos botones son obtejos</span>
+<div class="mb-4">
+    <!-- Tambien lo puedo ver como ngClass en versiones anteriores -->
+  <button
+    [ngClass]="{
+      disabled: button_disabled,
+      btn: true,
+      'btn-danger': true,
+    }"
+    (click)="text_color = 'text-danger'"
+  >
+    text-danger
+  </button>
+  <button
+    [class]="{
+      disabled: button_disabled
+    }"
+    class="btn btn-success mx-2"
+    (click)="text_color = 'text-success'"
+  >
+    text-success
+  </button>
+  <button
+    [class]="{
+      disabled: button_disabled
+    }"
+    class="btn btn-primary"
+    (click)="text_color = 'text-primary'"
+  >
+    text-primary
+  </button>
+</div>
+
+<!-- Tercera opcion para cuando quieras cambiar el valor de una misma clase -->
+<h3 [class]="text_color">Este texto va a cambiar de color</h3>
+
+<button class="btn btn-secondary" (click)="disableButtons()">
+  Activar/Desactivar
+</button>
