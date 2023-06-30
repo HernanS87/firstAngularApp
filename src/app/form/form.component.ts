@@ -6,10 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
+openAlert: boolean = false;
+nameValue: string = "";
 
 showByConsole(name: any) {
-console.log(name.value);
-name.value = "";
+  if (name.value){
+    this.nameValue= name.value;
+    console.log(this.nameValue);
+    name.value = "";
+    this.openAlert = true;
+  }
 }
-
 }

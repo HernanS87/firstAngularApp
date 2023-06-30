@@ -1,8 +1,16 @@
-
-<input type="text" placeholder="Escribe" class="form-control" #name>
+<input type="text" placeholder="Escribe" class="form-control" #name />
 
 <button class="btn btn-primary mt-2" (click)="showByConsole(name)">
   Mostrar en consola
 </button>
 
+<div class="alert alert-primary mt-4" *ngIf="openAlert; else mensaje">
+  <p>Se ha enviado el mensaje: {{nameValue}}</p>
+  <button class="btn btn-close" (click)="openAlert = false"></button>
+</div>
 
+<ng-template #mensaje>
+  <div class="alert alert-danger mt-4">
+    <p>No se ha enviado ningún mensaje</p>
+  </div>
+</ng-template>
