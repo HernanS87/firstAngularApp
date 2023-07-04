@@ -1,0 +1,15 @@
+<button class="btn btn-primary" (click)="guessDay()">Adivina el día</button>
+<button class="btn btn-danger mx-2" (click)="day = 0">Reiniciar</button>
+
+<div class="mt-2" [ngSwitch]="day" *ngIf="day">
+  <span class="h3 text-success" *ngSwitchCase="1">Hoy es Lunes paa!!</span>
+  <span class="h3 text-success" *ngSwitchCase="2">Hoy es Martes paa!!</span>
+  <span class="h3 text-success" *ngSwitchCase="3">Hoy es Miércoles paa!!</span>
+  <span class="h3 text-success" *ngSwitchCase="4">Hoy es Jueves paa!!</span>
+  <span class="h3 text-success" *ngSwitchCase="5">Hoy es Viernes paa!!</span>
+  <span class="h3 text-success" *ngSwitchCase="6">Hoy es Sábado paa!!</span>
+  <span class="h3 text-success" *ngSwitchCase="7">Hoy es Domingo paa!!</span>
+  <span class="h3 text-success" *ngSwitchDefault
+    >Hoy es el día Osvaldooo!!</span
+  >
+</div>
